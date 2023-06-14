@@ -6,6 +6,7 @@ function firstRecurringCharacter(input) {
             }
         }
     }
-}
+    return undefined;
+}//0(n^2)
 
 firstRecurringCharacter([2, 5, 11, 2, 3, 1, 2, 7])
