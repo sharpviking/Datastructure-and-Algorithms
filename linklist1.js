@@ -12,6 +12,13 @@
 //     }
 // }
 
+// class Node {
+//     constructor(value) {
+//         this.value = value;
+//         this.next = null
+//     }
+// }
+
 
 class LinkedList {
     constructor(value) {
@@ -23,11 +30,31 @@ class LinkedList {
         this.length = 1;
     }
     append(value) {
+        const newNode = {
+            value: value,
+            next: null
+        };
+        this.tail.next = newNode;
+        this.tail = newNode;
+        this.length++;
+        return this;
+    }
 
+    prepend(value) {
+        const newNode = {
+            value: value,
+            next: null
+        }
+
+        newNode.next = this.head;
+        this.head = newNode;
+        this.length++;
+        return this;
     }
 }
 
 const myLinkedList = new LinkedList(10)
 myLinkedList.append(11);
-myLinkedList.append(26)
+myLinkedList.append(26);
+myLinkedList.prepend(1993)
 console.log(myLinkedList);
